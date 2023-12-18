@@ -59,7 +59,7 @@ _setup_oci_image = rule(
         "_writer": attr.label(
             cfg = "exec",
             executable = True,
-            default = Label("//bazel/rules/image:write_image_file"),
+            default = Label("//rules/image:write_image_file"),
         ),
     },
 )
