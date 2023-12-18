@@ -1,1 +1,1 @@
-workspace(name = "oci-rules-helpers")
+workspace(name = "rules_oci_helpers")

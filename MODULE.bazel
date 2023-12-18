@@ -1,5 +1,5 @@
 module(
-    name = "oci-rules-helpers",
+    name = "rules_oci_helpers",
     version = "1.0.0",
 )
 
