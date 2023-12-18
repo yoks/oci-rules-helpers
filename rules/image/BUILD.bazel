@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_binary(
+    name = "write_image_file",
+    embed = [":image_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "image_lib",
+    srcs = ["write_image_file.go"],
+    importpath = "github.com/yoks/oci-rules-helpers/rules/image",
+    visibility = ["//visibility:private"],
+)

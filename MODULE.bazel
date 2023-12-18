@@ -1,0 +1,16 @@
+module(
+    name = "oci-rules-helpers",
+    version = "1.0.0",
+)
+
+bazel_dep(name = "rules_go", version = "0.43.0", repo_name = "io_bazel_rules_go")
+
+go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk")
+go_sdk.download(
+    urls = [
+        "https://dl.google.com/go/{}",
+        "https://go.dev/dl/{}",
+        "https://golang.org/dl/{}",
+    ],
+    version = "1.21.3",
+)
