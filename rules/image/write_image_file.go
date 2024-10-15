@@ -68,8 +68,8 @@ func getImageInfo(manifest string) ImageInfo {
 			}
 		}
 
-		// Our image
-		if stat.IsDir() {
+		// Our image, if it ends in layout this is distroles image, we ignore it
+		if stat.IsDir() && !strings.HasSuffix(path, "layout") {
 			indexFile, err := os.ReadFile(fmt.Sprintf("%s/index.json", path))
 			if err != nil {
 				log.Fatalf("could not open %s/index.json %v", path, err)
